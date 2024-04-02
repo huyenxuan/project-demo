@@ -13,6 +13,9 @@
 body {
     font-family: 'SVN-Gilroy', sans-serif;
 }
+a {
+    text-decoration: none;
+}
 
 /* header */
 .header {
@@ -116,8 +119,7 @@ form:hover input {
     font-family: var(--primary-font);
 }
 .map a {
-    text-decoration: none;
-    color: black !important;
+    color: black;
 }
 .map:hover a {
     color: var(--primary-bgc);
@@ -155,7 +157,6 @@ span {
     cursor: auto;
 }
 .list-contact a {
-    text-decoration: none;
     color: var(--primary-color);
     font-family: var(--primary-font);
     font-weight: 600;
@@ -201,7 +202,6 @@ ul {
     align-items: center;
 }
 .menu a {
-    text-decoration: none;
     color: var(--primary-color);
     font-family: var(--primary-font);
     font-weight: 600;
@@ -252,7 +252,6 @@ ul li:hover .dad-list {
     justify-content: end;
 }
 .card a {
-    text-decoration: none;
     display: flex;
     align-items: center;
     position: relative;
@@ -287,7 +286,6 @@ ul li:hover .dad-list {
     align-items: center;
 }
 .user a {
-    text-decoration: none;
     color: var(--primary-color);
     text-transform: uppercase;
     font-size: 14px;
@@ -401,4 +399,87 @@ ul li:hover .dad-list {
 }
 .item-small a:hover {
     color: var(--primary-bgc);
+}
+
+/* footer */
+.footer {
+    height: 465px;
+    background-color: #2a2a86;
+    padding-top: 25px;
+    color: white;
+    font-size: 14px;
+}
+.footer footer {
+    /* display: flex; */
+    width: 100%;
+    max-width: 1240px;
+    margin: auto;
+}
+.footer .ft-ctn {
+    display: flex;
+    margin: 0 5px;
+}
+.footer .title {
+    width: 410px;
+    padding: 0 10px 0 0;
+}
+.footer .title-text {
+    width: 400px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.tiltle-social {
+    width: 380px;
+}
+.tiltle-social img {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+    transition: 0.7s;
+}
+.tiltle-social img:hover {
+    transform: rotate(30deg);
+}
+.footer .about {
+    width: 230px;
+    padding: 0 10px;
+}
+.footer .about ul, .support ul, .info ul {
+    padding: 10px 0 0 5px;
+}
+.footer .about li, .support li, .info li {
+    margin-bottom: 7px;
+}
+.footer a {
+    font-size: 14px;
+    color: white;
+}
+.footer a:hover {
+    color: var(--primary-bgc);
+}
+.footer .support {
+    width: 350px;
+    padding: 0 10px;
+}
+.footer .info {
+    width: 335px;
+    padding: 0 10px;
+}
+.footer .info li {
+    line-height: 2;
+}
+.footer .info img {
+    vertical-align: middle;
+}
+.footer .coppyright {
+    text-align: center;
+}
+.footer hr {
+    max-width: 1200px;
+    margin: 16px auto;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+.footer h4 {
+    text-transform: uppercase;
 }
