@@ -1,6 +1,5 @@
 :root {
-    --primary-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    --sub-font: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --primary-color: #11006F;
     --primary-bgc: #fcaf17;
 }
@@ -8,7 +7,7 @@
 .banner {
     margin-top: 99px;
     margin-bottom: 20px;
-    width: 100%;
+    /* width: 100%; */
 }
 .slider {
     width: 1240px;
@@ -16,18 +15,20 @@
     height: 388px;
     margin: auto;
     position: relative;
+    overflow: hidden;
 }
 .list-banner {
-    margin: 0 5px;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     display: flex;
     width: max-content;
+    transition: 1s;
 }
-.list-banner .item-slider img {
+.list-banner .item-banner img {
     width: 1240px;
+    overflow: hidden;
     max-width: 100vw;
     height: 100%;
     object-fit: cover;
@@ -41,12 +42,14 @@
     border: none;
     background-color: transparent;
 }
-.buttons-banner button img {
+.buttons-banner button img,
+.buttons-cate button img {
     width: 30px;
     height: 30px;
     transition: all 0.3s;
 }
-.buttons-banner button:hover img {
+.buttons-banner button:hover img,
+.buttons-cate button:hover img {
     transform: scale(1.23);
 }
 .buttons-banner #next {
@@ -71,12 +74,15 @@
     height: 7px;
     border-radius: 50%;
     background-color: #fff;
+    margin-right: 5px;
+    transition: 1s;
 }
-
+.dots-banner .active {
+    background-color: #fcaf17;
+}
 /* promotion */
 .promotion {
     width: 100%;
-    margin-left: 5px;
     margin-bottom: 25px;
 }
 .promotion .container {
@@ -100,7 +106,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--primary-font);
     background-color: #ffb801;
     top: 32px;
     left: 243px;
@@ -113,11 +119,13 @@
     text-align: center;
     transition-duration: 0s;
 }
-.promotion .item-promotion:hover {
+.promotion .item-promotion:hover,
+.slide-wrapper li:hover {
     transition: all .5s ease;
     transform: translateY(-10px);
 }
-.promotion .item-promotion:hover img {
+.promotion .item-promotion:hover img,
+.slide-wrapper li:hover img {
     box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.3);
 }
 .promotion .item1 {
@@ -137,7 +145,7 @@
 .promotion .title {
     margin-top: 16px;
     font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--primary-font);
     color: var(--primary-color);
     font-weight: 600;
     padding: 0 10px;
@@ -146,7 +154,6 @@
 /* category */
 .category {
     width: 100%;
-    margin-left: 5px;
     margin-bottom: 25px;
 }
 .category-ctn {
@@ -171,14 +178,83 @@
     margin-right: 50px;
     padding-bottom: 19px;
     color: #97A0AD;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--primary-font);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
 }
-.category .item-male,
+.category .cate-active,
 .category .menu-list div:hover {
     color: #fcaf17;
     border-bottom: 2px solid #fcaf17;
+}
+.slide-content-male,
+.slide-content-female,
+.slide-content-children {
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+}
+.slide-wrapper ul {
+    margin-left: 5px;
+    display: flex;
+    width: 100%;
+    transition: 1s;
+}
+.slide-wrapper ul li {
+    width: 150px;
+    height: 150px;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+.slide-wrapper li .group-item {
+    width: 150px;
+    /* justify-content: center; */
+    text-align: center;
+}
+.slide-wrapper .group-item .image {
+    height: 90px;
+}
+.slide-wrapper img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+.slide-wrapper li .title {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 16px;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-weight: 600;
+}
+.buttons-cate {
+    z-index: 9;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.buttons-cate button {
+    position: absolute;
+    cursor: pointer;
+    top: 40%;
+    left: 5px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+}
+.buttons-cate .cate-next {
+    left: unset;
+    right: 5px;
+}
+.buttons-cate .disable img {
+    opacity: 0.2;
+    transform: none !important;
+}
+.slide-wrapper li:hover .title {
+    color: #fcaf17;
+}
+.category .none {
+    display: none;
 }
