@@ -132,3 +132,82 @@ prevCateFemale.addEventListener('click', () => {
     prevCateFemale.classList.add('disable');
     nextCateFemale.classList.remove('disable');
 })
+
+// slide product
+// new product
+let listNewProduct = document.querySelector('.list-product .row-newproduct');
+let prevNewProduct = document.getElementById('prev-product');
+let nextNewProduct = document.getElementById('next-product');
+
+let currentPosition = 0;
+const moveDistance = -1016; //khoảng cách dịch chuyển
+const totalItems = listNewProduct.children.length;
+const maxPosition = Math.ceil((totalItems / 4)-1) * moveDistance;
+nextNewProduct.addEventListener('click', () => {
+    if (currentPosition <= maxPosition) {
+        return; 
+    }
+    currentPosition += moveDistance;
+    listNewProduct.style.scrollbehavior = "smooth";
+    listNewProduct.style.transform = `translateX(${currentPosition}px)`;
+});
+prevNewProduct.addEventListener('click', () => {
+    if (currentPosition >= 0) {
+        return;
+    }
+    currentPosition -= moveDistance;
+    listNewProduct.style.scrollbehavior = "smooth";
+    listNewProduct.style.transform = `translateX(${currentPosition}px)`;
+})
+
+// bestseller
+let listBestSeller = document.querySelector('.row-bestseller');
+let prevBestSeler = document.querySelector('.bestseller-prev');
+let nextBestSeller = document.querySelector('.bestseller-next');
+
+let curPosBestSeller = 0;
+const totalItemsBestSeller = listBestSeller.children.length;
+console.log(totalItemsBestSeller);
+const maxPosBestSeller = Math.ceil((totalItemsBestSeller / 4)-1) * moveDistance;
+nextBestSeller.addEventListener('click', () => {
+    if (curPosBestSeller <= maxPosBestSeller) {
+        return; 
+    }
+    curPosBestSeller += moveDistance;
+    listBestSeller.style.scrollbehavior = "smooth";
+    listBestSeller.style.transform = `translateX(${curPosBestSeller}px)`;
+});
+prevBestSeler.addEventListener('click', () => {
+    if (curPosBestSeller >= 0) {
+        return;
+    }
+    curPosBestSeller -= moveDistance;
+    listBestSeller.style.scrollbehavior = "smooth";
+    listBestSeller.style.transform = `translateX(${curPosBestSeller}px)`;
+})
+
+// bestseller
+let listPolo = document.querySelector('.row-polo');
+let prevPolo = document.getElementById('prev-polo');
+let nextPolo = document.getElementById('next-polo');
+
+let curPosPolo = 0;
+const totalItemsPolo = listPolo.children.length;
+console.log(totalItemsPolo);
+const maxPosPolo = Math.ceil((totalItemsPolo / 4)-1) * moveDistance;
+nextPolo.addEventListener('click', () => {
+    if (curPosPolo <= maxPosPolo) {
+        return; 
+    }
+    curPosPolo += moveDistance;
+    listPolo.style.scrollbehavior = "smooth";
+    listPolo.style.transform = `translateX(${curPosPolo}px)`;
+});
+prevPolo.addEventListener('click', () => {
+    if (curPosPolo >= 0) {
+        return;
+    }
+    curPosPolo -= moveDistance;
+    listPolo.style.scrollbehavior = "smooth";
+    listPolo.style.transform = `translateX(${curPosPolo}px)`;
+})
