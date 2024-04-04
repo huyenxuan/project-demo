@@ -186,15 +186,14 @@ prevBestSeler.addEventListener('click', () => {
     listBestSeller.style.transform = `translateX(${curPosBestSeller}px)`;
 })
 
-// bestseller
+// polo
 let listPolo = document.querySelector('.row-polo');
 let prevPolo = document.getElementById('prev-polo');
 let nextPolo = document.getElementById('next-polo');
-
 let curPosPolo = 0;
 const totalItemsPolo = listPolo.children.length;
-console.log(totalItemsPolo);
 const maxPosPolo = Math.ceil((totalItemsPolo / 4)-1) * moveDistance;
+
 nextPolo.addEventListener('click', () => {
     if (curPosPolo <= maxPosPolo) {
         return; 
@@ -210,4 +209,129 @@ prevPolo.addEventListener('click', () => {
     curPosPolo -= moveDistance;
     listPolo.style.scrollbehavior = "smooth";
     listPolo.style.transform = `translateX(${curPosPolo}px)`;
+})
+
+// sport
+let listSport = document.querySelector('.row-sport');
+let prevSport = document.getElementById('prev-sport');
+let nextSport = document.getElementById('next-sport');
+let curPosSport = 0;
+const totalItemsSport = listSport.children.length;
+const maxPosSport = Math.ceil((totalItemsSport / 4)-1) * moveDistance;
+
+nextSport.addEventListener('click', () => {
+    if (curPosSport <= maxPosSport) {
+        return; 
+    }
+    curPosSport += moveDistance;
+    listSport.style.scrollbehavior = "smooth";
+    listSport.style.transform = `translateX(${curPosSport}px)`;
+});
+prevSport.addEventListener('click', () => {
+    if (curPosSport >= 0) {
+        return;
+    }
+    curPosSport -= moveDistance;
+    listSport.style.scrollbehavior = "smooth";
+    listSport.style.transform = `translateX(${curPosSport}px)`;
+})
+
+// T-shirt
+let listTShirt = document.querySelector('.row-tshirt');
+let prevTShirt = document.getElementById('prev-tshirt');
+let nextTShirt = document.getElementById('next-tshirt');
+let curPosTShirt = 0;
+const totalItemsTShirt = listTShirt.children.length;
+const maxPosTShirt = Math.ceil((totalItemsTShirt / 4) - 1) * moveDistance;
+
+nextTShirt.addEventListener('click', () => {
+    if (curPosTShirt <= maxPosTShirt) {
+        return;
+    }
+    curPosTShirt += moveDistance;
+    listTShirt.style.scrollbehavior = "smooth";
+    listTShirt.style.transform = `translateX(${curPosTShirt}px)`;
+})
+prevTShirt.addEventListener('click', () => {
+    if (curPosTShirt >= 0) {
+        return;
+    }
+    curPosTShirt -= moveDistance;
+    listTShirt.style.scrollbehavior = "smooth";
+    listTShirt.style.transform = `translateX(${curPosTShirt}px)`;
+})
+
+// jeans
+let listJeans = document.querySelector('.row-jeans');
+let nextJeans = document.getElementById('next-jeans');
+let prevJeans = document.getElementById('prev-jeans');
+let curPosJeans = 0;
+const totalItemsJeans = listJeans.children.length;
+const maxPosJeans = Math.ceil((totalItemsJeans / 4) - 1) * moveDistance;
+
+nextJeans.addEventListener('click', () => {
+    if (curPosJeans <= maxPosJeans) {
+        return;
+    }
+    curPosJeans += moveDistance;
+    listJeans.style.scrollbehavior = "smooth";
+    listJeans.style.transform = `translateX(${curPosJeans}px)`;
+})
+prevJeans.addEventListener('click', () => {
+    if (curPosJeans >= 0) {
+        return;
+    }
+    curPosJeans -= moveDistance;
+    listJeans.style.scrollbehavior = "smooth";
+    listJeans.style.transform = `translateX(${curPosJeans}px)`;
+})
+
+// office
+let listOffice = document.querySelector('.row-office');
+let nextOffice = document.getElementById('next-office');
+let prevOffice = document.getElementById('prev-office');
+let curPosOffice = 0;
+const totalItemsOffice = listOffice.children.length;
+const maxPosOffice = Math.ceil((totalItemsOffice / 4) - 1) * moveDistance;
+
+nextOffice.addEventListener('click', () => {
+    if (curPosOffice <= maxPosOffice) {
+        return;
+    }
+    curPosOffice += moveDistance;
+    listOffice.style.scrollbehavior = "smooth";
+    listOffice.style.transform = `translateX(${curPosOffice}px)`;
+})
+prevOffice.addEventListener('click', () => {
+    if (curPosOffice >= 0) {
+        return;
+    }
+    curPosOffice -= moveDistance;
+    listOffice.style.scrollbehavior = "smooth";
+    listOffice.style.transform = `translateX(${curPosOffice}px)`;
+})
+
+// accessory
+let listAccessory = document.querySelector('.row-accessory');
+let nextAccessory = document.getElementById('next-accessory');
+let prevAccessory = document.getElementById('prev-accessory');
+let curPosAccessory = 0;
+const totalItemsAccessory = listAccessory.children.length;
+const maxPosAccessory = Math.ceil((totalItemsAccessory / 4) - 1) * moveDistance;
+
+nextAccessory.addEventListener('click', () => {
+    if (curPosAccessory <= maxPosAccessory) {
+        return;
+    }
+    curPosAccessory += moveDistance;
+    listAccessory.style.scrollbehavior = "smooth";
+    listAccessory.style.transform = `translateX(${curPosAccessory}px)`;
+})
+prevAccessory.addEventListener('click', () => {
+    if (curPosAccessory >= 0) {
+        return;
+    }
+    curPosAccessory -= moveDistance;
+    listAccessory.style.scrollbehavior = "smooth";
+    listAccessory.style.transform = `translateX(${curPosAccessory}px)`;
 })
