@@ -398,3 +398,38 @@ button {
     left: unset;
     right: -2%;
 }
+/* flashsale */
+.flashsale .title {
+    display: flex;
+    align-items: center;
+}
+.flashsale .title img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+.flashsale .title a {
+    margin-right: 10px;
+}
+.flashsale .count-down div {
+    margin-right: 5px;
+}
+.flashsale .count-down .item {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(180deg, #FDB700 0%, #F02900 100%);
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.flashsale .count-down span {
+    color: white;
+    font-weight: 600;
+}
+.flashsale .line {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}

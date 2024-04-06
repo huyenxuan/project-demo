@@ -138,12 +138,16 @@ prevCateFemale.addEventListener('click', () => {
 let listNewProduct = document.querySelector('.list-product .row-newproduct');
 let prevNewProduct = document.getElementById('prev-product');
 let nextNewProduct = document.getElementById('next-product');
-
 let currentPosition = 0;
 const moveDistance = -1016; //khoảng cách dịch chuyển
 const totalItems = listNewProduct.children.length;
 const maxPosition = Math.ceil((totalItems / 4)-1) * moveDistance;
+prevNewProduct.classList.add('disable');
 nextNewProduct.addEventListener('click', () => {
+    prevNewProduct.classList.remove('disable');
+    if (currentPosition <= maxPosition-moveDistance) {
+        nextNewProduct.classList.add('disable');
+    }
     if (currentPosition <= maxPosition) {
         return; 
     }
@@ -152,6 +156,10 @@ nextNewProduct.addEventListener('click', () => {
     listNewProduct.style.transform = `translateX(${currentPosition}px)`;
 });
 prevNewProduct.addEventListener('click', () => {
+    nextNewProduct.classList.remove('disable');
+    if (currentPosition >= moveDistance) {
+        prevNewProduct.classList.add('disable');
+    }
     if (currentPosition >= 0) {
         return;
     }
@@ -160,16 +168,52 @@ prevNewProduct.addEventListener('click', () => {
     listNewProduct.style.transform = `translateX(${currentPosition}px)`;
 })
 
+// flashsale
+let listFlashSale = document.querySelector('.row-flashsale');
+let prevFlashSale = document.getElementById('prev-flashsale');
+let nextFlashSale = document.getElementById('next-flashsale');
+let curPosFlashSale = 0;
+const totalItemsFlashSale = listFlashSale.children.length;
+const maxPosFlashSale = Math.ceil((totalItemsFlashSale / 4)-1) * moveDistance;
+prevFlashSale.classList.add('disable');
+nextFlashSale.addEventListener('click', () => {
+    prevFlashSale.classList.remove('disable');
+    if (curPosFlashSale <= maxPosFlashSale-moveDistance) {
+        nextFlashSale.classList.add('disable');
+    }
+    if (curPosFlashSale <= maxPosFlashSale) {
+        return; 
+    }
+    curPosFlashSale += moveDistance;
+    listFlashSale.style.scrollbehavior = "smooth";
+    listFlashSale.style.transform = `translateX(${curPosFlashSale}px)`;
+});
+prevFlashSale.addEventListener('click', () => {
+    nextFlashSale.classList.remove('disable');
+    if (curPosFlashSale >= moveDistance) {
+        prevFlashSale.classList.add('disable');
+    }
+    if (curPosFlashSale >= 0) {
+        return;
+    }
+    curPosFlashSale -= moveDistance;
+    listFlashSale.style.scrollbehavior = "smooth";
+    listFlashSale.style.transform = `translateX(${curPosFlashSale}px)`;
+})
+
 // bestseller
 let listBestSeller = document.querySelector('.row-bestseller');
 let prevBestSeler = document.querySelector('.bestseller-prev');
 let nextBestSeller = document.querySelector('.bestseller-next');
-
 let curPosBestSeller = 0;
 const totalItemsBestSeller = listBestSeller.children.length;
-console.log(totalItemsBestSeller);
 const maxPosBestSeller = Math.ceil((totalItemsBestSeller / 4)-1) * moveDistance;
+prevBestSeler.classList.add('disable');
 nextBestSeller.addEventListener('click', () => {
+    prevBestSeler.classList.remove('disable');
+    if (curPosBestSeller <= maxPosBestSeller-moveDistance) {
+        nextBestSeller.classList.add('disable');
+    }
     if (curPosBestSeller <= maxPosBestSeller) {
         return; 
     }
@@ -178,6 +222,10 @@ nextBestSeller.addEventListener('click', () => {
     listBestSeller.style.transform = `translateX(${curPosBestSeller}px)`;
 });
 prevBestSeler.addEventListener('click', () => {
+    nextBestSeller.classList.remove('disable');
+    if (curPosBestSeller >= moveDistance) {
+        prevBestSeler.classList.add('disable');
+    }
     if (curPosBestSeller >= 0) {
         return;
     }
@@ -193,8 +241,12 @@ let nextPolo = document.getElementById('next-polo');
 let curPosPolo = 0;
 const totalItemsPolo = listPolo.children.length;
 const maxPosPolo = Math.ceil((totalItemsPolo / 4)-1) * moveDistance;
-
+prevPolo.classList.add('disable');
 nextPolo.addEventListener('click', () => {
+    prevPolo.classList.remove('disable');
+    if (curPosPolo <= maxPosPolo-moveDistance) {
+        nextPolo.classList.add('disable');
+    }
     if (curPosPolo <= maxPosPolo) {
         return; 
     }
@@ -203,6 +255,10 @@ nextPolo.addEventListener('click', () => {
     listPolo.style.transform = `translateX(${curPosPolo}px)`;
 });
 prevPolo.addEventListener('click', () => {
+    nextPolo.classList.remove('disable');
+    if (curPosPolo >= moveDistance) {
+        prevPolo.classList.add('disable');
+    }
     if (curPosPolo >= 0) {
         return;
     }
@@ -218,8 +274,12 @@ let nextSport = document.getElementById('next-sport');
 let curPosSport = 0;
 const totalItemsSport = listSport.children.length;
 const maxPosSport = Math.ceil((totalItemsSport / 4)-1) * moveDistance;
-
+prevSport.classList.add('disable');
 nextSport.addEventListener('click', () => {
+    prevSport.classList.remove('disable');
+    if (curPosSport <= maxPosSport-moveDistance) {
+        nextSport.classList.add('disable');
+    }
     if (curPosSport <= maxPosSport) {
         return; 
     }
@@ -228,6 +288,10 @@ nextSport.addEventListener('click', () => {
     listSport.style.transform = `translateX(${curPosSport}px)`;
 });
 prevSport.addEventListener('click', () => {
+    nextSport.classList.remove('disable');
+    if (curPosSport >= moveDistance) {
+        prevSport.classList.add('disable');
+    }
     if (curPosSport >= 0) {
         return;
     }
@@ -243,8 +307,12 @@ let nextTShirt = document.getElementById('next-tshirt');
 let curPosTShirt = 0;
 const totalItemsTShirt = listTShirt.children.length;
 const maxPosTShirt = Math.ceil((totalItemsTShirt / 4) - 1) * moveDistance;
-
+prevTShirt.classList.add('disable');
 nextTShirt.addEventListener('click', () => {
+    prevTShirt.classList.remove('disable');
+    if (curPosTShirt <= maxPosTShirt-moveDistance) {
+        nextTShirt.classList.add('disable');
+    }
     if (curPosTShirt <= maxPosTShirt) {
         return;
     }
@@ -253,6 +321,10 @@ nextTShirt.addEventListener('click', () => {
     listTShirt.style.transform = `translateX(${curPosTShirt}px)`;
 })
 prevTShirt.addEventListener('click', () => {
+    nextTShirt.classList.remove('disable');
+    if (curPosTShirt >= moveDistance) {
+        prevTShirt.classList.add('disable');
+    }
     if (curPosTShirt >= 0) {
         return;
     }
@@ -268,8 +340,12 @@ let prevJeans = document.getElementById('prev-jeans');
 let curPosJeans = 0;
 const totalItemsJeans = listJeans.children.length;
 const maxPosJeans = Math.ceil((totalItemsJeans / 4) - 1) * moveDistance;
-
+prevJeans.classList.add('disable');
 nextJeans.addEventListener('click', () => {
+    prevJeans.classList.remove('disable');
+    if (curPosJeans <= maxPosJeans-moveDistance) {
+        nextJeans.classList.add('disable');
+    }
     if (curPosJeans <= maxPosJeans) {
         return;
     }
@@ -278,6 +354,10 @@ nextJeans.addEventListener('click', () => {
     listJeans.style.transform = `translateX(${curPosJeans}px)`;
 })
 prevJeans.addEventListener('click', () => {
+    nextJeans.classList.remove('disable');
+    if (curPosJeans >= moveDistance) {
+        prevJeans.classList.add('disable');
+    }
     if (curPosJeans >= 0) {
         return;
     }
@@ -293,8 +373,12 @@ let prevOffice = document.getElementById('prev-office');
 let curPosOffice = 0;
 const totalItemsOffice = listOffice.children.length;
 const maxPosOffice = Math.ceil((totalItemsOffice / 4) - 1) * moveDistance;
-
+prevOffice.classList.add('disable');
 nextOffice.addEventListener('click', () => {
+    prevOffice.classList.remove('disable');
+    if (curPosOffice <= maxPosOffice-moveDistance) {
+        nextOffice.classList.add('disable');
+    }
     if (curPosOffice <= maxPosOffice) {
         return;
     }
@@ -303,6 +387,10 @@ nextOffice.addEventListener('click', () => {
     listOffice.style.transform = `translateX(${curPosOffice}px)`;
 })
 prevOffice.addEventListener('click', () => {
+    nextOffice.classList.remove('disable');
+    if (curPosOffice >= moveDistance) {
+        prevOffice.classList.add('disable');
+    }
     if (curPosOffice >= 0) {
         return;
     }
@@ -318,8 +406,12 @@ let prevAccessory = document.getElementById('prev-accessory');
 let curPosAccessory = 0;
 const totalItemsAccessory = listAccessory.children.length;
 const maxPosAccessory = Math.ceil((totalItemsAccessory / 4) - 1) * moveDistance;
-
+prevAccessory.classList.add('disable');
 nextAccessory.addEventListener('click', () => {
+    prevAccessory.classList.remove('disable');
+    if (curPosAccessory <= maxPosAccessory-moveDistance) {
+        nextAccessory.classList.add('disable');
+    }
     if (curPosAccessory <= maxPosAccessory) {
         return;
     }
@@ -328,6 +420,10 @@ nextAccessory.addEventListener('click', () => {
     listAccessory.style.transform = `translateX(${curPosAccessory}px)`;
 })
 prevAccessory.addEventListener('click', () => {
+    nextAccessory.classList.remove('disable');
+    if (curPosAccessory >= moveDistance) {
+        prevAccessory.classList.add('disable');
+    }
     if (curPosAccessory >= 0) {
         return;
     }
@@ -335,3 +431,20 @@ prevAccessory.addEventListener('click', () => {
     listAccessory.style.scrollbehavior = "smooth";
     listAccessory.style.transform = `translateX(${curPosAccessory}px)`;
 })
+
+// count-down flashsale
+let hours = document.querySelector('.hours span');
+let minutes = document.querySelector('.minutes span');
+let seconds = document.querySelector('.seconds span');
+
+let countDown = new Date('Apr 7 2024 00:00:00');
+setInterval(() => {
+    let currentTime = new Date();
+    let timeDifference = countDown - currentTime;
+    let timeHours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let timeMinutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    let timeSeconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    hours.innerText = timeHours;
+    minutes.innerText = timeMinutes;
+    seconds.innerText = timeSeconds;
+}, 1000)
