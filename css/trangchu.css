@@ -336,7 +336,6 @@ button {
     display: block;
     position: relative;
     overflow: hidden;
-    padding-bottom: 133%;
 }
 .product-thumbnail img {
     width: 100%;

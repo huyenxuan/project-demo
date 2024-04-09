@@ -1,0 +1,120 @@
+main {
+    margin-left: 0;
+}
+.main-content{
+    background-image: url(https://bizweb.dktcdn.net/100/438/408/themes/946371/assets/bg_login.jpg?1712653540087);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+.login-wrap{
+    display: flex;
+    width: 648px;
+    height: 820px;
+    margin: auto;
+    flex-direction: column;
+    background-color: white;
+    padding: 50px 100px;
+}
+.login-wrap .title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.login-wrap .title span{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #111784;
+}
+.form-login{
+    display: flex;
+    width: 434px;
+    flex-direction: column;
+}
+.form-login input{
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    width: 434px;
+    outline: none;
+    border-radius: 4px;
+}
+.form-login input:focus {
+    border-color: #8c8c8c;
+}
+.form-login button{
+    width: 434px;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    background-color: #FCAF17;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.forgot-pass{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+    color: #FCAF17;
+    text-decoration: none;
+}
+
+.social-login{
+    position: relative;
+    border-top: 1px solid #ddd;
+    max-width: 100%;
+    margin: 40px 20px 10px;
+}
+
+.social-login .txt{
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.social-login .social-list{
+    margin: 30px 45px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-login .social-list a{
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.regis-form{
+    margin: 10px 20px;
+    text-align: center;
+}
+
+.regis-form a{
+    text-decoration: none;
+    color: #FCAF17;
+    font-weight: 500;
+}
+
+.regis-form a:hover{
+    text-decoration: underline;
+}
+
+.footer{
+    margin-top: 0 !important;
+}
+/* dang ky */
+.login-wrap .txt-hd{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 45px;
+    color: #595959;
+}

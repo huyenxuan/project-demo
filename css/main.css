@@ -76,7 +76,7 @@ form {
     position: relative;
     border: 2px solid transparent;
 }
-form:hover input {
+.form-search:hover input {
     border: 1px solid var(--primary-bgc);
 }
 .search input {
