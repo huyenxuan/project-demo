@@ -438,6 +438,7 @@ let minutes = document.querySelector('.minutes span');
 let seconds = document.querySelector('.seconds span');
 
 let countDown = new Date('Apr 7 2024 00:00:00');
+console.log(countDown);
 setInterval(() => {
     let currentTime = new Date();
     let timeDifference = countDown - currentTime;
